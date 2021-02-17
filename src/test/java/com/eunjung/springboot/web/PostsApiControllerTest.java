@@ -59,7 +59,6 @@ public class PostsApiControllerTest {
         postsRepository.deleteAll();
     }
 
-    @SuppressWarnings("unchecked")
     @Test
     @WithMockUser(roles = "USER")
     public void Posts_등록된다() throws Exception {
@@ -90,7 +89,6 @@ public class PostsApiControllerTest {
     }
 
     @Test
-    @SuppressWarnings("unchecked")
     @WithMockUser(roles = "USER")
     public void Posts_수정된다() throws Exception {
         //given
