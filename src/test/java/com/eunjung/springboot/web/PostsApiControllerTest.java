@@ -28,7 +28,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SuppressWarnings("unchecked")
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class PostsApiControllerTest {
@@ -59,7 +58,8 @@ public class PostsApiControllerTest {
     public void tearDown() throws Exception {
         postsRepository.deleteAll();
     }
-    
+
+    @SuppressWarnings("unchecked")
     @Test
     @WithMockUser(roles = "USER")
     public void Posts_등록된다() throws Exception {
@@ -90,6 +90,7 @@ public class PostsApiControllerTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     @WithMockUser(roles = "USER")
     public void Posts_수정된다() throws Exception {
         //given
